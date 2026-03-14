@@ -872,13 +872,58 @@ footer {
   .footer-inner      { grid-template-columns: 1fr 1fr; }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
+  /* Header compacto en móvil */
+  header             { padding: 0.4rem 1rem; }
+  .header-inner      { gap: 0.5rem; }
+  .site-logo img     { height: 48px !important; width: auto; }
+  .logo-text strong  { font-size: 0.95rem !important; }
+  .logo-text span    { font-size: 0.65rem !important; }
+
+  /* Menú hamburguesa mejorado */
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%; left: 0; right: 0;
+    background: var(--bg2);
+    border-top: 1px solid var(--border);
+    border-bottom: 3px solid var(--amarillo);
+    padding: 0.5rem 0;
+    gap: 0;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    z-index: 999;
+  }
+  .nav-menu.open     { display: flex; }
+  .nav-menu a {
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.85rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+    width: 100%;
+    display: block;
+    color: var(--text);
+    text-transform: none;
+    letter-spacing: 0;
+  }
+  .nav-menu a:last-child  { border-bottom: none; }
+  .nav-menu .nav-cta {
+    background: var(--azul);
+    color: #fff !important;
+    border-radius: 0;
+    text-align: center;
+    margin: 0.5rem 1rem;
+    border-radius: 6px;
+    border-bottom: none;
+  }
+  .nav-toggle        { display: flex; }
+
+  /* Secciones */
   section            { padding: 3.5rem 1rem; }
   .hero              { padding: 6.5rem 1rem 3rem; }
-  .nav-menu          { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--bg2); border-bottom: 3px solid var(--amarillo); padding: 1rem 1.2rem; gap: 0.4rem; box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
-  .nav-menu.open     { display: flex; }
-  .nav-toggle        { display: flex; }
   .pilares-grid      { grid-template-columns: 1fr; }
   .footer-inner      { grid-template-columns: 1fr; }
   .footer-bottom     { flex-direction: column; align-items: flex-start; }
+  .contact-grid      { grid-template-columns: 1fr !important; gap: 2rem !important; }
+  .form-row          { grid-template-columns: 1fr !important; }
 }
